@@ -1,0 +1,350 @@
+@import 'susy';
+@import 'compass';
+@import 'compass/typography';
+@import 'breakpoint';
+@import url(http://fonts.googleapis.com/css?family=Montserrat|Pacifico);
+@include border-box-sizing;
+$base-font-size: 12px;
+$base-line-height: 21px;
+@include establish-baseline;
+$bp-m: 400px;
+$bp-l: 740px;
+$bp-xl: 1100px;
+$med: layout(auto 12 0 fluid float);
+$lrg: layout(1280px 24 0 fluid float);
+$lrg-isolate: layout(1280px 24 0 fluid isolate);
+$c1: #4bff8b;
+$c2: #49d6e8;
+$c3: #93a6ff;
+$c4: #9d42e8;
+$c5: #ff65ab;
+$xl-sidebar-width: 6;
+$row-height: 250px;
+
+// Styling
+
+%header-font {
+  color: scale-lightness($c4, -20%);
+  font-family: Pacifico,Optima,Segoe,Segoe UI,Candara,Calibri,Arial,sans-serif;
+  font-weight: 500; 
+  text-align: center;
+
+  .comics & {
+    font-family: Montserrat,Optima,Segoe,Segoe UI,Candara,Calibri,Arial,sans-serif;
+    color: scale-lightness($c5, -20%);
+  }
+
+  .coding & {
+    font-family: Montserrat,Optima,Segoe,Segoe UI,Candara,Calibri,Arial,sans-serif;
+    color: scale-lightness($c3, -20%);
+  }
+}
+
+
+h1 { 
+  @extend %header-font;
+  // adjust-font-size-to($to-size, $lines, $from-size)
+  @include adjust-font-size-to(38px, 1);
+  text-shadow: 2px 2px $c3;
+
+
+}
+
+h2 { 
+  @extend %header-font;
+  @include adjust-font-size-to(12px);
+}
+
+p {
+  color: scale-lightness($c5, -40%);
+  font-family: Georgia,Times,Times New Roman,serif;
+  font-weight: 400;
+}
+
+a {
+  // link-colors ( normal hover active visited focus )
+  @include link-colors($c4, $c5, $c5, $c4, $c5);
+}
+
+/**
+ * Clearfix for IE8 and up
+ * http://css-tricks.com/snippets/css/clear-fix/
+ */
+@mixin cf {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+// Main Layout
+
+@include layout(auto 17 0 fluid float);
+
+
+body {
+  @include container;
+  @include span(full);
+}
+
+// Vertical Rhythm in Compass is used for applying all borders
+
+main {
+  @include breakpoint($bp-m) {
+    @include leading-border(4px, 0);
+    border-top-color: $c1;
+  }
+
+  &.comics {
+    @include breakpoint($bp-m) {
+      @include leading-border(0, 0);
+      border-top-color: $c1;
+    }
+  }
+}
+
+// I extend from a general image class for the backgrounds on the home page
+
+%img-class {
+  @include span(full);
+  height: 900px;
+  
+  &.display-small {
+    display: inline-block;
+  }
+
+  &.display-large {
+    display: none;
+  }
+
+  @include breakpoint($bp-m) {
+    height: 400px;
+
+    &.display-small {
+      display: none;
+    }
+
+    &.display-large {
+      display: inline-block;
+    }
+  }
+
+  @include breakpoint($bp-l) {
+    height: 600px;
+  }
+
+  @include susy-breakpoint($bp-xl, $lrg) {
+    @include span(24 - $xl-sidebar-width);
+    @include trailing-border(12px, .5);
+    border-bottom-color: lighten($c1, 5%);
+    height: $row-height*3;
+
+    &.display {
+      display: none;
+    }
+  }
+}
+
+// here are the actual images classes for the home background images
+
+.img1 {
+  @extend %img-class;
+  background: image-url('bgs/p3.jpg') no-repeat;
+}
+
+.img2 {
+  @extend %img-class;
+  background: image-url('bgs/p4.jpg') no-repeat;
+}
+
+// I use a model for the rows used throughout as well, it is designed to be "mobile first"
+
+%row-model-pre {
+  @include span(full);
+  @include leading-border(4px, .5);
+  @include trailing-border(12px, .5);
+  height: 400px;
+  padding-left: 1em;
+  padding-right: 1em;
+
+  @include breakpoint($bp-m) {
+    height: 300px;
+  }
+
+}
+
+// Home page rows
+
+.row-a {
+  @extend %row-model-pre;
+  @extend %row-model-home;
+  background-color: scale-lightness($c2, 45%);
+  border-bottom-color: $c3;
+  border-top-color: lighten($c1, 5%);
+  
+  @include susy-breakpoint($bp-m, $med) {
+    @include span(full);
+    height: 200px;
+  }
+
+  @include susy-breakpoint($bp-l, $med) {
+    @include span(4 first);
+  }
+}
+
+.row-b {
+  @extend %row-model-pre;
+  @extend %row-model-home;
+  background-color: scale-lightness($c3, 45%);
+  border-bottom-color: $c4;
+  border-top-color: lighten($c2, 5%);
+
+  @include susy-breakpoint($bp-m, $med) {
+    @include span(6 first);
+  }
+
+  @include susy-breakpoint($bp-l, $med) {
+    @include span(4);
+  }
+}
+
+.row-c {
+  @extend %row-model-pre;
+  @extend %row-model-home;
+  background-color: scale-lightness($c4, 45%);
+  border-bottom-color: $c5;
+  border-top-color: lighten($c3, 5%);
+  
+  @include susy-breakpoint($bp-m, $med) {
+    @include span(6 last);
+  }
+
+  @include susy-breakpoint($bp-l, $med) {
+    @include span(4 last);
+  }
+}
+
+%row-model-home {
+  @include breakpoint($bp-l) {
+    height: 400px;
+  }
+
+  @include susy-breakpoint($bp-xl, $lrg) {
+    @include leading-border(0, .5);
+    @include span($xl-sidebar-width);
+    height: $row-height;
+  }
+}
+
+// Comics
+
+main.comics {
+  height: 1500px;
+}
+
+@include breakpoint($bp-m) {
+    @include leading-border(0, 0);
+    border-top-color: $c1;
+  }
+
+%row-model-comics {
+  @include breakpoint($bp-m) {
+    @include leading-border(4px, 0);
+    border-top-color: $c1;
+  }
+}
+
+.row-d {
+  @extend %row-model-pre;
+  @extend %row-model-comics;
+  background-color: scale-lightness($c2, 45%);
+  border-bottom-color: $c3;
+  border-top-color: lighten($c1, 5%);
+  height: 300px;
+  
+  @include susy-breakpoint($bp-m, $med) {
+    @include span(full);
+    height: 200px;
+  }
+
+  @include susy-breakpoint($bp-l, $lrg-isolate) {
+    @include span(6 first);
+    height: 400px;
+    position: fixed;
+  }
+
+  @include susy-breakpoint($bp-xl, $lrg-isolate) {
+    @include span(6 first);
+    height: $row-height + 100;
+  }
+}
+
+.row-e {
+  @extend %row-model-pre;
+  @extend %row-model-comics;
+  background-color: scale-lightness($c3, 45%);
+  border-bottom-color: $c4;
+  border-top-color: lighten($c2, 5%);
+
+  @include susy-breakpoint($bp-m, $med) {
+    @include span(7 first);
+    height: 400px;
+  }
+
+  @include susy-breakpoint($bp-l, $lrg-isolate) {
+    @include span(12 at 7);
+  }
+
+  @include susy-breakpoint($bp-xl, $lrg-isolate) {
+    @include span(12 at 7);
+    height: $row-height + 100;
+  }
+}
+
+.row-f {
+  @extend %row-model-pre;
+  @extend %row-model-comics;
+  background-color: scale-lightness($c4, 45%);
+  border-bottom-color: $c5;
+  border-top-color: lighten($c3, 5%);
+  height: 200px;
+  
+  @include susy-breakpoint($bp-m, $med) {
+    @include span(5 last);
+    height: 400px;
+  }
+
+  @include susy-breakpoint($bp-l, $lrg-isolate) {
+    @include span(6 at 19);
+    position: fixed;
+  }
+
+  @include susy-breakpoint($bp-xl, $lrg-isolate) {
+    @include span(6 at 19);
+    height: $row-height + 100;
+  }
+}
+
+// Comics gallery
+
+// Footer
+
+.footer {
+  @include span(full);
+  color: darken($c1, 20%);
+
+  @include breakpoint($bp-m) {
+    @include leading-border(12px, .5);
+    border-top-color: lighten($c1, 5%);
+  }
+
+  @include breakpoint($bp-l) {
+    @include leading-border(12px, .5);
+    border-top-color: lighten($c1, 5%);
+  }
+
+  @include breakpoint($bp-xl) {
+    @include leading-border(0, 0);
+  }
+}
