@@ -11,6 +11,7 @@ $bp-m: 400px;
 $bp-l: 740px;
 $bp-xl: 1100px;
 $med: layout(auto 12 0 fluid float);
+$gallery: layout(auto 12 .5 fluid float);
 $lrg: layout(1280px 24 0 fluid float);
 $lrg-isolate: layout(1280px 24 0 fluid isolate);
 $c1: #4bff8b;
@@ -286,14 +287,16 @@ main.comics {
   background-color: scale-lightness($c3, 45%);
   border-bottom-color: $c4;
   border-top-color: lighten($c2, 5%);
+  height: auto;
 
   @include susy-breakpoint($bp-m, $med) {
-    @include span(7 first);
-    height: 400px;
+    @include span(8 first);
+    height: 500px;
   }
 
   @include susy-breakpoint($bp-l, $lrg-isolate) {
     @include span(12 at 7);
+    height: 400px;
   }
 
   @include susy-breakpoint($bp-xl, $lrg-isolate) {
@@ -311,13 +314,14 @@ main.comics {
   height: 200px;
   
   @include susy-breakpoint($bp-m, $med) {
-    @include span(5 last);
-    height: 400px;
+    @include span(4 last);
+    height: 500px;
   }
 
   @include susy-breakpoint($bp-l, $lrg-isolate) {
     @include span(6 at 19);
     position: fixed;
+    height: 400px;
   }
 
   @include susy-breakpoint($bp-xl, $lrg-isolate) {
@@ -329,18 +333,40 @@ main.comics {
 // Comics gallery
 
 .gallery figure {
-  @include gallery(12 of 12);
+  @include layout($gallery);
+  @include cf;
+  @include span(full);
+  border: 2px solid $c5;
+  height: auto;
+
+  img {
+    @include span(full);
+    height: 60px;
+    border: 2px solid $c3;
+  }
 
   @include breakpoint($bp-m) {
-    @include gallery(6 of 12);    
+    @include gallery(6 of 12);
+
+    img {
+      height: 90px;
+    }    
   }
 
   @include breakpoint($bp-l) {
     @include gallery(4 of 12);
+
+    img {
+      height: 100px;
+    }
   }
 
   @include breakpoint($bp-xl) {
     @include gallery(2 of 12);
+    
+    img {
+      height: 225px;
+    }
   }
 }
 
