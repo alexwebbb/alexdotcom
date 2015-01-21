@@ -4,7 +4,8 @@ require 'rails/test_help'
 
 class ActiveSupport::TestCase
   # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
-  fixtures :all
+  # I ain't got no Active record, hence fixtures are disabled
+  # fixtures :all
 
   # Add more helper methods to be used by all tests here...
 end
