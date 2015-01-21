@@ -328,6 +328,22 @@ main.comics {
 
 // Comics gallery
 
+.gallery figure {
+  @include gallery(12 of 12);
+
+  @include breakpoint($bp-m) {
+    @include gallery(6 of 12);    
+  }
+
+  @include breakpoint($bp-l) {
+    @include gallery(4 of 12);
+  }
+
+  @include breakpoint($bp-xl) {
+    @include gallery(2 of 12);
+  }
+}
+
 // Footer
 
 .footer {
