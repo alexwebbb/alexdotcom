@@ -10,10 +10,11 @@ $base-line-height: 21px;
 $bp-m: 400px;
 $bp-l: 740px;
 $bp-xl: 1100px;
-$med: layout(auto 12 0 fluid float);
-$gallery: layout(auto 12 .5 fluid float);
-$lrg: layout(1280px 24 0 fluid float);
-$lrg-isolate: layout(1280px 24 0 fluid isolate);
+$initial: layout(17 0 fluid float);
+$med: layout(12 0 fluid float);
+$gallery: layout(12 .5 fluid float);
+$lrg: layout(24 0 fluid float);
+$lrg-isolate: layout(24 0 fluid isolate);
 $c1: #4bff8b;
 $c2: #49d6e8;
 $c3: #93a6ff;
@@ -33,7 +34,7 @@ $row-height: 250px;
   .comics & {
     font-family: Montserrat,Optima,Segoe,Segoe UI,Candara,Calibri,Arial,sans-serif;
     color: scale-lightness($c5, -20%);
-  }
+  }  
 
   .coding & {
     font-family: Montserrat,Optima,Segoe,Segoe UI,Candara,Calibri,Arial,sans-serif;
@@ -123,13 +124,20 @@ nav {
 
 // Main Layout
 
-@include layout(auto 17 0 fluid float);
-
-
 body {
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  background: linear-gradient(top, #FEE, complement($c3));
+}
+
+
+.container {
   @include container;
   @include span(full);
-}
+  @include layout($initial);
+  
+ }
 
 // Vertical Rhythm in Compass is used for applying all borders
 
