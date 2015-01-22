@@ -10,11 +10,12 @@ $base-line-height: 21px;
 $bp-m: 400px;
 $bp-l: 740px;
 $bp-xl: 1100px;
+$bp-xl: 1780px;
 $initial: layout(17 0 fluid float);
 $med: layout(12 0 fluid float);
 $gallery: layout(12 .5 fluid float);
 $lrg: layout(24 0 fluid float);
-$lrg-isolate: layout(24 0 fluid isolate);
+$lrg-isolate: layout(1780px 24 0 fluid isolate);
 $c1: #4bff8b;
 $c2: #49d6e8;
 $c3: #93a6ff;
@@ -125,7 +126,7 @@ nav {
 // Main Layout
 
 body {
-  max-width: 1780px;
+  // max-width: 1780px;
   margin-left: auto;
   margin-right: auto;
   background: linear-gradient(top, $c1, #FFF);
@@ -204,6 +205,10 @@ main {
 .img1 {
   @extend %img-class;
   background: image-url('bgs/p3.jpg') no-repeat;
+
+  @include breakpoint($bp-xxl) {
+    background: image-url('bgs/p3xl.jpg') no-repeat;
+  }
 }
 
 .img2 {
@@ -324,7 +329,7 @@ main.comics {
   @include susy-breakpoint($bp-l, $lrg-isolate) {
     @include span(6 first);
     height: 400px;
-    position: fixed;
+    // position: fixed;
   }
 
   @include susy-breakpoint($bp-xl, $lrg-isolate) {
@@ -371,13 +376,13 @@ main.comics {
   }
 
   @include susy-breakpoint($bp-l, $lrg-isolate) {
-    @include span(6 at 19);
-    position: fixed;
+    @include span(6 at 19 last);
+    // position: fixed;
     height: 400px;
   }
 
   @include susy-breakpoint($bp-xl, $lrg-isolate) {
-    @include span(6 at 19);
+    @include span(6 at 19 last);
     height: $row-height + 100;
   }
 }
