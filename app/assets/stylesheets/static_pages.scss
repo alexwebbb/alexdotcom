@@ -285,7 +285,8 @@ main {
 // Comics
 
 main.comics {
-  height: 1500px;
+  @include cf;
+  height: auto;
 }
 
 @include breakpoint($bp-m) {
@@ -339,8 +340,8 @@ main.comics {
   }
 
   @include susy-breakpoint($bp-l, $lrg-isolate) {
-    @include pre(6);
     @include span(12 at 7);
+    @include cf;
     height: 400px;
   }
 
@@ -435,6 +436,51 @@ main.comics {
     }
   }
 }
+
+//Gallery images
+
+
+.images {
+  @include susy-breakpoint($bp-l, $lrg-isolate) {
+    @include span(12 at 7);
+    margin-top: 400px;
+  }
+
+  @include susy-breakpoint($bp-xl, $lrg-isolate) {
+    @include span(12 at 7);
+    margin-top: $row-height + 100;
+  }
+}
+
+.g1,
+.g2,
+.g3,
+.g4,
+.g5,
+.g6 {
+  display: none;
+
+  &.active {
+    display: block;
+  }
+
+  img {
+    max-width: 100%;
+    max-height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+.g1 {
+
+  &.active {
+    display: inline;
+  }
+}
+
+
+
 
 // Footer
 
