@@ -11,17 +11,18 @@ $bp-m: 400px;
 $bp-l: 740px;
 $bp-xl: 1100px;
 $bp-xxl: 1780px;
-$initial: layout(17 0 fluid float);
+$initial: layout(17 0 fluid float use-custom breakpoint);
 $med: layout(12 0 fluid float);
 $gallery: layout(12 .5 fluid float);
 $lrg: layout(24 0 fluid float);
-$lrg-isolate: layout(1780px 24 0 fluid isolate);
+$lrg-isolate: layout(24 0 fluid isolate);
 $c1: #4bff8b;
 $c2: #49d6e8;
 $c3: #93a6ff;
 $c4: #9d42e8;
 $c5: #ff65ab;
 $xl-sidebar-width: 6;
+$xxl-sidebar-width: 4;
 $row-height: 250px;
 
 // Styling
@@ -125,19 +126,20 @@ nav {
 
 // Main Layout
 
-body {
-  // max-width: 1780px;
-  margin-left: auto;
-  margin-right: auto;
-  background: linear-gradient(top, $c1, #FFF);
+html {
+  // background: linear-gradient(bottom, complement($c3), #fff);
 }
 
+body {
+  max-width: 1780px;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 .container {
   @include container;
   @include span(full);
-  @include layout($initial);
-  
+  @include layout($initial);  
  }
 
 // Vertical Rhythm in Compass is used for applying all borders
@@ -229,7 +231,6 @@ main {
   @include breakpoint($bp-m) {
     height: 300px;
   }
-
 }
 
 // Home page rows
@@ -329,7 +330,7 @@ main.comics {
   @include susy-breakpoint($bp-l, $lrg-isolate) {
     @include span(6 first);
     height: 400px;
-    // position: fixed;
+    position: fixed;
   }
 
   @include susy-breakpoint($bp-xl, $lrg-isolate) {
@@ -377,7 +378,7 @@ main.comics {
 
   @include susy-breakpoint($bp-l, $lrg-isolate) {
     @include span(6 at 19 last);
-    // position: fixed;
+    position: fixed;
     height: 400px;
   }
 
