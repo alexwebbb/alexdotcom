@@ -143,8 +143,10 @@ main {
   }
 
   &.comics {
-    @include breakpoint($bp-m) {
+    @include susy-breakpoint($bp-m, $lrg) {
       @include leading-border(0, 0);
+      @include cf;
+      height: auto;
       border-top-color: $c1;
     }
   }
@@ -285,14 +287,13 @@ main {
 // Comics
 
 main.comics {
-  @include cf;
-  height: auto;
+  
 }
 
-@include breakpoint($bp-m) {
-    @include leading-border(0, 0);
-    border-top-color: $c1;
-  }
+// @include breakpoint($bp-m) {
+//     @include leading-border(0, 0);
+//     border-top-color: $c1;
+//   }
 
 %row-model-comics {
   @include breakpoint($bp-m) {
@@ -317,12 +318,12 @@ main.comics {
   @include susy-breakpoint($bp-l, $lrg-isolate) {
     @include span(6 first);
     height: 400px;
-    position: fixed;
   }
 
   @include susy-breakpoint($bp-xl, $lrg-isolate) {
     @include span(6 first);
     height: $row-height + 100;
+    position: fixed;
   }
 }
 
@@ -441,8 +442,8 @@ main.comics {
 
 
 .images {
-  @include susy-breakpoint($bp-l, $lrg-isolate) {
-    @include span(12 at 7);
+  @include susy-breakpoint($bp-l, $lrg) {
+    @include span(18);
     margin-top: 400px;
   }
 
@@ -467,8 +468,11 @@ main.comics {
   img {
     max-width: 100%;
     max-height: auto;
-    display: block;
     margin: 0 auto;
+
+    @include breakpoint($bp-l) {
+      display: block;
+    }
   }
 }
 
