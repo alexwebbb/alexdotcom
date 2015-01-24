@@ -105,10 +105,7 @@ nav {
     @include adjust-leading-to(.5, 12px);
     text-shadow: 1px 1px $c3;
     display: inline-block;
-    // @include rhythm-padding(.4, .05, 12px);
-    // background-color: $c1;
-    // border-radius: 2px;
-
+    
     @include breakpoint($bp-l) {
       @include gallery(4 of 48);
     }
@@ -300,15 +297,6 @@ main {
 
 // Comics
 
-main.comics {
-  
-}
-
-// @include breakpoint($bp-m) {
-//     @include leading-border(0, 0);
-//     border-top-color: $c1;
-//   }
-
 %row-model-comics {
   @include breakpoint($bp-m) {
     @include leading-border(4px, 0);
@@ -393,27 +381,6 @@ main.comics {
   }
 }
 
-// Scrolling fix
-
-//  .fixed {
-//  
-//    @include susy-breakpoint($bp-l, $lrg) {
-//      @include container;
-//      position: fixed;
-//      left: 0;
-//      right: 0;
-//  
-//      .row-d {
-//        @include span(6);
-//      }
-//  
-//      .row-f {
-//        @include pre(18);
-//        @include span(6);
-//      }      
-//    }
-//  }
-
 // Comics gallery
 
 .gallery figure {
@@ -492,21 +459,21 @@ main.comics {
   }
 }
 
-.g1 {
-  article {
-    overflow: hidden;
-  }
+// This is necessary to make it so the horse lady gallery produces seperate scroll bars for each
 
-  figure {
+.g1 {
+  .nested {
     height: 540px;
     width: 1920px;
-    margin-bottom: 200px;
   }
 }
+
+// Pop this on something and it becomes scrollable
 
 .scroll {
   overflow: scroll;
   height: 100%;
+  margin-bottom: 200px;
 }
 
 .p1 {
