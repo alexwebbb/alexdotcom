@@ -7,9 +7,9 @@
 $base-font-size: 12px;
 $base-line-height: 21px;
 @include establish-baseline;
-$bp-m: 400px;
-$bp-l: 740px;
-$bp-xl: 1100px;
+$bp-m: 520px;
+$bp-l: 880px;
+$bp-xl: 1200px;
 $initial: layout(17 0 fluid float);
 $med: layout(12 0 fluid float);
 $gallery: layout(12 .5 fluid float);
@@ -247,6 +247,13 @@ main {
   border-bottom-color: $c4;
   border-top-color: lighten($c2, 5%);
 
+//  figure {
+//    @include span(full);
+//    background: image-url('preview/comicslil.jpg') center no-repeat;
+//    height: 100%;
+//    opacity: 0.4;
+//  }
+
   @include susy-breakpoint($bp-m, $med) {
     @include span(6 first);
   }
@@ -262,6 +269,13 @@ main {
   background-color: scale-lightness($c4, 45%);
   border-bottom-color: $c5;
   border-top-color: lighten($c3, 5%);
+
+//  figure {
+//    @include span(full);
+//    background: image-url('preview/codinglil.jpg') center no-repeat;
+//    height: 100%;
+//    opacity: 0.4;
+//  }
   
   @include susy-breakpoint($bp-m, $med) {
     @include span(6 last);
@@ -318,6 +332,8 @@ main.comics {
   @include susy-breakpoint($bp-l, $lrg-isolate) {
     @include span(6 first);
     height: 400px;
+    position:relative;
+    z-index: 100;
   }
 
   @include susy-breakpoint($bp-xl, $lrg-isolate) {
@@ -358,7 +374,7 @@ main.comics {
   background-color: scale-lightness($c4, 45%);
   border-bottom-color: $c5;
   border-top-color: lighten($c3, 5%);
-  height: 200px;
+  height: auto;
   
   @include susy-breakpoint($bp-m, $med) {
     @include span(4 last);
@@ -404,13 +420,13 @@ main.comics {
   @include layout($gallery);
   @include cf;
   @include span(full);
-  border: 2px solid $c5;
   height: auto;
 
   img {
     @include span(full);
+    max-width: 350px;
     height: 60px;
-    border: 2px solid $c3;
+    box-shadow: 10px 10px 5px $c6;
   }
 
   @include breakpoint($bp-m) {
@@ -477,14 +493,55 @@ main.comics {
 }
 
 .g1 {
+  article {
+    overflow: hidden;
+  }
 
-  &.active {
-    display: inline;
+  figure {
+    height: 540px;
+    width: 1920px;
+    margin-bottom: 200px;
   }
 }
 
+.scroll {
+  overflow: scroll;
+  height: 100%;
+}
 
+.p1 {
+  background: image-url('preview/hl3.jpg') center no-repeat;
+}
 
+.p2 {
+  background: image-url('preview/rh2.jpg') center no-repeat;
+}
+
+.p3 {
+  background: image-url('preview/gtc.jpg') center no-repeat;
+}
+
+.p4 {
+  background: image-url('preview/rh1.jpg') center no-repeat;
+}
+
+.p5 {
+  background: image-url('preview/sd.jpg') center no-repeat;
+}
+
+.p6 {
+  background: image-url('preview/sl.jpg') center no-repeat;
+}
+
+// Default is for the text block in the gallery, it removes the prompt
+
+.default {
+  display: none;
+
+  &.active {
+    display: block;
+  }
+}
 
 // Footer
 
