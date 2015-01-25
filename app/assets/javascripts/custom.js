@@ -72,6 +72,6 @@ var reloadImages = function() {
     _el.style.backgroundImage = 'url(' + url + ')';
   }
 }
-$(document).on('page:change', function() {
+$(document).on('page:load', function() {
   reloadImages();
 });
