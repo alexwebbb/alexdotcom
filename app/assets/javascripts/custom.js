@@ -57,21 +57,13 @@ ready = function() {
 $(document).ready(ready);
 $(document).on('page:load', ready);
 
-// http://carlosbecker.com/posts/turbolinks/ turbolinks fix
 
-var reloadImages = function() {
-  var styles, style, url, _i, _len, _el;
-  styles = Array.prototype.slice.call(document.body.querySelectorAll('[style]'));
-  for (_i = 0, _len = styles.length; _i < _len; _i++) {
-    _el = styles[_i]
-    style = _el.getAttribute('style');
-    if (!(style.indexOf('url(') > -1)) {
-      continue;
-    }
-    url = style.match(/url\((.*)\)/)[1];
-    _el.style.backgroundImage = 'url(' + url + ')';
+$('.gallery').loop(function(e) {
+  var url;
+  if (!(e.attr('style') && e.attr('style').indexOf("url(") > -1)) {
+    return;
   }
-}
-$(document).on('page:load', function() {
-  reloadImages();
+  url = e.attr('style').match(/url\((.*)\)/)[1];
+  e.css('backgroundImage', "url(" + url + ")");
+  return console.log("fixed bg image", url);
 });
