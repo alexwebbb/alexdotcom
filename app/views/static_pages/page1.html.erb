@@ -1,19 +1,34 @@
-<main>
-<div class="img1 display-large"></div>
-<div class="row-d comics">
-  <h1>Comics & Illustration</h1>
-  <h2>The home of Alex Webb</h2>
-  <p>My name is Alex Webb (only two B's) and I am an artist and developer from Austin, TX. I am the <a href="#">risograph</a> operator for <a href="#">Rough House</a> and <a href="#">Raw Paw</a>, I write and illustrate my own comics, and I make websites. Have a look around!</p>
+<% provide(:title, "about") %>
+<% content_for :navigation do %>
+  <%= link_to root_path do %>
+  <h2>Home</h2>
+  <% end %>
+  <%= link_to comics_path do %>
+  <h2>Comics</h2>
+  <% end %>
+  <%= link_to coding_path do %>
+  <h2>Code</h2>
+  <% end %>
+<% end %>
+<main class="width-limit">
+<div class="row-about-1">
+	<h1>Alex Webbb dot com</h1>
+	<h2>The home of Alex Webb</h2>
+	<p>My name is Alex Webb (only two B's) and I am an artist and developer from Austin, TX. I am the <a href="#">risograph</a> operator for <a href="http://www.roughhousecomics.com">Rough House</a> and <a href="#">Raw Paw</a>, I write and illustrate my own comics, and I make websites. Have a look around!</p>
 </div>
-<div class="img1 display-small"></div>
-<div class="row-e">
-  <h1>Comics & Illustration</h1>
-  <h2>Check out my personal work and work that I have printed for Rough House!</h2>
+<div class="about-top display-large"></div>
+<div class="row-about-2 comics">
+	<h1>Comics & Illustration</h1>
+	<h2>Check out my personal work.</h2>
+	<figure></figure>
 </div>
-<div class="img2 display-small"></div>
-<div class="row-f">
-  <h1>Coding Portfolio</h1>
-    <h2>Check out some examples of my code.</h2>
+<div class="about-top display-small"></div>
+<%= link_to comics_path do %>
+<% end %>
+<%= link_to comics_path do %>
+<div class="row-about-3 coding">
+	<h1>Coding Portfolio</h1>
+    <h2>Check out examples of my code.</h2>
+    <figure></figure>
 </div>
-<div class="img2 display-large display"></div>
-</main>
+<% end %>
