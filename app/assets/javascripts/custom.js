@@ -1,4 +1,5 @@
-$(document).ready(function() {
+var ready;
+ready = function() {
 
   $(".p1").click(function () {
 
@@ -47,4 +48,8 @@ $(document).ready(function() {
 	  $('.g6').toggleClass('active');
  
     });
-});
+
+};
+
+$(document).ready(ready);
+$(document).on('page:load', ready);

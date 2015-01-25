@@ -105,7 +105,7 @@ nav {
     @include adjust-leading-to(.5, 12px);
     text-shadow: 1px 1px $c3;
     display: inline-block;
-    
+
     @include breakpoint($bp-l) {
       @include gallery(4 of 48);
     }
@@ -209,12 +209,12 @@ main {
   @include span(full);
   @include leading-border(4px, .5);
   @include trailing-border(12px, .5);
-  height: 400px;
+  height: 250px;
   padding-left: 1em;
   padding-right: 1em;
 
   @include breakpoint($bp-m) {
-    height: 300px;
+    height: 250px;
   }
 }
 
@@ -243,13 +243,28 @@ main {
   background-color: scale-lightness($c3, 45%);
   border-bottom-color: $c4;
   border-top-color: lighten($c2, 5%);
+  overflow: hidden;
 
-//  figure {
-//    @include span(full);
-//    background: image-url('preview/comicslil.jpg') center no-repeat;
-//    height: 100%;
-//    opacity: 0.4;
-//  }
+  h1 {
+    height: 40px;
+  }
+
+  figure {
+    @include span(full);
+    background: image-url('preview/comicslil.jpg') center no-repeat;
+    border-radius: 60px 0 0 0;
+    border: 4px dashed $c4;
+    height: 120px;
+    // opacity: 0.4;
+
+    @include breakpoint(max-width ($bp-m - 1)) {
+      border-radius: 60px 60px 0 0;
+    }
+
+    @include breakpoint($bp-xl) {
+      border-radius: 60px 60px 0 0;
+    }
+  }
 
   @include susy-breakpoint($bp-m, $med) {
     @include span(6 first);
@@ -266,13 +281,27 @@ main {
   background-color: scale-lightness($c4, 45%);
   border-bottom-color: $c5;
   border-top-color: lighten($c3, 5%);
+  overflow: hidden;
 
-//  figure {
-//    @include span(full);
-//    background: image-url('preview/codinglil.jpg') center no-repeat;
-//    height: 100%;
-//    opacity: 0.4;
-//  }
+  h1 {
+    height: 40px;
+  }
+
+  figure {
+    @include span(full);
+    background: image-url('preview/codinglil.jpg') center no-repeat;
+    border-radius: 0 60px 0 0;
+    height: 120px;
+    border: 4px dashed $c6;
+
+    @include breakpoint(max-width ($bp-m - 1)) {
+      border-radius: 60px 60px 0 0;
+    }
+
+    @include breakpoint($bp-xl) {
+      border-radius: 60px 60px 0 0;
+    }
+  }
   
   @include susy-breakpoint($bp-m, $med) {
     @include span(6 last);
@@ -285,7 +314,7 @@ main {
 
 %row-model-home {
   @include breakpoint($bp-l) {
-    height: 400px;
+    height: 300px;
   }
 
   @include susy-breakpoint($bp-xl, $lrg) {
