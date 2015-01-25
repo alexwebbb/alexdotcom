@@ -55,15 +55,5 @@ ready = function() {
 
 
 $(document).ready(ready);
-$(document).on('page:load', ready);
+// $(document).on('page:load', ready);
 
-
-$('.gallery').loop(function(e) {
-  var url;
-  if (!(e.attr('style') && e.attr('style').indexOf("url(") > -1)) {
-    return;
-  }
-  url = e.attr('style').match(/url\((.*)\)/)[1];
-  e.css('backgroundImage', "url(" + url + ")");
-  return console.log("fixed bg image", url);
-});
