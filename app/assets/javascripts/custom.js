@@ -51,5 +51,23 @@ ready = function() {
 
 };
 
+// Fix for turbolinks
+
+var reloadImages = function() {
+      var styles, style, url, _i, _len, _el;
+      styles = Array.prototype.slice.call(document.body.querySelectorAll('[style]'));
+      for (_i = 0, _len = styles.length; _i < _len; _i++) {
+        _el = styles[_i]
+        style = _el.getAttribute('style');
+        if (!(style.indexOf('url(') > -1)) {
+          continue;
+        }
+        url = style.match(/url\((.*)\)/)[1];
+        _el.style.backgroundImage = 'url(' + url + ')';
+      }
+    }
+
+
 $(document).ready(ready);
 $(document).on('page:load', ready);
+$(document).on('page:change', reloadImages);
