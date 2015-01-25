@@ -506,6 +506,15 @@ main {
   margin-bottom: 200px;
 }
 
+// preloading images using css
+
+#preload-01 { background: image-url('preview/hl3.jpg') center no-repeat; }
+#preload-02 { background: image-url('preview/rh2.jpg') center no-repeat; }
+#preload-03 { background: image-url('preview/gtc.jpg') center no-repeat; }
+#preload-04 { background: image-url('preview/rh1.jpg') center no-repeat; }
+#preload-05 { background: image-url('preview/sd.jpg') center no-repeat; }
+#preload-06 { background: image-url('preview/sl.jpg') center no-repeat; }
+
 .p1 {
   background: image-url('preview/hl3.jpg') center no-repeat;
 }
