@@ -496,15 +496,29 @@ main {
     height: 540px;
     width: 1920px;
   }
+
+  figure {
+    margin-bottom: 200px;
+  }
 }
 
 // Pop this on something and it becomes scrollable
 
 .scroll {
-  overflow: scroll;
-  height: 100%;
-  margin-bottom: 200px;
+  figure {
+    overflow: scroll;
+    height: 100%;
+  }
+
+  @at-root article#{&} {
+    @include breakpoint($bp-m) {
+      overflow: scroll;
+      height: 100%;
+    }
+  }
 }
+
+
 
 .p1 {
   background: image-url('preview/hl3.jpg') center no-repeat;
