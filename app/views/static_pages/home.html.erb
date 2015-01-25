@@ -1,8 +1,14 @@
 <% provide(:title, "Home") %>
 <% content_for :navigation do %>
+  <%= link_to about_path do %>
   <h2>About</h2>
+  <% end %>
+  <%= link_to comics_path do %>
   <h2>Comics</h2>
+  <% end %>
+  <%= link_to coding_path do %>
   <h2>Code</h2>
+  <% end %>
 <% end %>
 <main class="home">
 <div class="img1 display-large"></div>
