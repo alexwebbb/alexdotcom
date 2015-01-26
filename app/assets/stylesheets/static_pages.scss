@@ -53,6 +53,7 @@ $row-height: 250px;
   text-align: center;
 
   .comics & {
+    @include unstyled-link;
     font-family: Montserrat,Optima,Segoe,Segoe UI,Candara,Calibri,Arial,sans-serif;
     color: scale-lightness($c5, -20%);
   }  
@@ -724,7 +725,7 @@ main {
 .row-coding-1 {
   @extend %row-model-pre;
   @include color-scheme(1);
-  height: 175px;
+  height: auto;
   margin-bottom: 225px;
 
   @include susy-breakpoint($bp-m, $med) {
@@ -736,12 +737,10 @@ main {
   @include susy-breakpoint($bp-l, $lrg-isolate) {
     @include span(6 first);
     margin-bottom: 0px;
-    height: 450px;
   }
 
   @include susy-breakpoint($bp-xl, $lrg-isolate) {
     @include span(4 first);
-    height: 550px;
   }
 }
 
@@ -775,7 +774,7 @@ main {
 .row-coding-3 {
   @extend %row-model-pre;
   @include color-scheme(3);
-  height: 200px;
+  height: auto;
 
   @include susy-breakpoint($bp-m, $med) {
     @include span(10);
@@ -784,14 +783,14 @@ main {
 
   @include susy-breakpoint($bp-l, $lrg-isolate) {
     @include span(6 at 10);
-    margin-top: 350px;
-    height: 450px;
+    margin-top: 300px;
+    // height: 450px;
   }
 
   @include susy-breakpoint($bp-xl, $lrg-isolate) {
     @include span(4 at 11);
     margin-top: 150px;
-    height: 600px;
+    // height: 600px;
   }
 }
 
