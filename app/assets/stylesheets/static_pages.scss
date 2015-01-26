@@ -761,13 +761,11 @@ main {
     @include span(6 last);
     @include leading-border(0, 0);
     margin-bottom: 0px;
-    height: 450px;
 
   }
 
   @include susy-breakpoint($bp-xl, $lrg-isolate) {
     @include span(4 last);
-    height: 550px;
   }
 }
 
