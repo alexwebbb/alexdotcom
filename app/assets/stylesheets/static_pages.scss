@@ -371,7 +371,7 @@ main {
   @extend %row-model-pre;
   @extend %row-model-comics;
   @include color-scheme(1);
-  height: 300px;
+  height: auto;
   
   @include susy-breakpoint($bp-m, $med) {
     @include span(full);
