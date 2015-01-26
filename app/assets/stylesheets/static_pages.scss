@@ -60,7 +60,7 @@ $row-height: 250px;
   .coding & {
     font-family: Montserrat,Optima,Segoe,Segoe UI,Candara,Calibri,Arial,sans-serif;
     color: scale-lightness($c3, -20%);
-  }
+  }  
 
   nav & {
     font-family: Montserrat,Optima,Segoe,Segoe UI,Candara,Calibri,Arial,sans-serif;
@@ -80,7 +80,7 @@ h1 {
 
 h2 { 
   @extend %header-font;
-  @include adjust-font-size-to(12px);
+  @include adjust-font-size-to(12px, .85);
 }
 
 h3 {
@@ -91,6 +91,7 @@ p {
   color: scale-lightness($c5, -40%);
   font-family: Georgia,Times,Times New Roman,serif;
   font-weight: 400;
+
 }
 
 a {
@@ -603,7 +604,7 @@ main {
 
   @include susy-breakpoint($bp-l, $med) {
     @include span(3 last);
-    height: 600px;
+    height: 610px;
 
   }
 
@@ -643,7 +644,7 @@ main {
 
   @include susy-breakpoint($bp-l, $med) {
     @include span(9);
-    height: 200px;
+    height: 210px;
   }
 
   @include susy-breakpoint($bp-xl, $lrg) {
@@ -657,6 +658,7 @@ main {
   @include span(full);
   background: image-url('bgs/p2.jpg') center no-repeat;
   height: 400px;
+  position: relative;
 
   &.display-small {
     display: inline-block;
@@ -664,6 +666,23 @@ main {
 
   &.display-large {
     display: none;
+  }
+
+  figure {
+    background: image-url('self/alex-photo.jpg') center no-repeat;
+    height: 300px;
+    width: 300px;
+    border: 4px dashed $c3;  
+    border-radius: 300px;
+
+    margin: auto;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+
+    @include breakpoint($bp-m $bp-l) {
+      height: 250px;
+      width: 250px;
+    }
   }
 
   @include susy-breakpoint($bp-m, $med) {
