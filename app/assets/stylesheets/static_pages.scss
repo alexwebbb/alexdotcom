@@ -726,7 +726,7 @@ main {
   @extend %row-model-pre;
   @include color-scheme(1);
   height: auto;
-  margin-bottom: 225px;
+  margin-bottom: 150px;
 
   @include susy-breakpoint($bp-m, $med) {
     @include span(10);
@@ -747,8 +747,8 @@ main {
 .row-coding-2 {
   @extend %row-model-pre;
   @include color-scheme(2);
-  height: 175px;
-  margin-bottom: 225px;
+  height: auto;
+  margin-bottom: 150px;
 
   @include susy-breakpoint($bp-m, $med) {
     @include pre(2);
