@@ -97,6 +97,12 @@ p {
 a {
   // link-colors ( normal hover active visited focus )
   @include link-colors($c4, $c5, $c5, $c4, $c5);
+  text-decoration: none;
+
+  h1,
+  h2 {
+    @include unstyled-link;
+  }
 }
 
 /**
@@ -125,7 +131,6 @@ nav {
   height: 30px;
 
   a {
-    @include unstyled-link;
     @include layout($gallery);
     @include gallery(4 of 12);
     @include adjust-leading-to(.5, 12px);
@@ -211,7 +216,7 @@ main {
     border-bottom-color: lighten($c1, 5%);
     height: $row-height*3;
 
-    &.display {
+    &.display-not-xl {
       display: none;
     }
   }
@@ -253,7 +258,7 @@ main {
   @extend %row-model-home;
   @include color-scheme(1);
   height: auto;
-  
+
   @include susy-breakpoint($bp-m, $med) {
     @include span(full);
   }
@@ -705,6 +710,107 @@ main {
 
   @include susy-breakpoint($bp-xl, $lrg) {
     @include span(15);
+  }
+}
+
+// Coding section
+
+.row-coding-1 {
+  @extend %row-model-pre;
+  @include color-scheme(1);
+  height: 175px;
+  margin-bottom: 225px;
+
+  @include susy-breakpoint($bp-m, $med) {
+    @include span(10);
+    @include leading-border(0, 0);
+    margin-bottom: 100px;
+  }
+
+  @include susy-breakpoint($bp-l, $lrg-isolate) {
+    @include span(6 first);
+    margin-bottom: 0px;
+    height: 450px;
+  }
+
+  @include susy-breakpoint($bp-xl, $lrg-isolate) {
+    @include span(4 first);
+    height: 550px;
+  }
+}
+
+.row-coding-2 {
+  @extend %row-model-pre;
+  @include color-scheme(2);
+  height: 175px;
+  margin-bottom: 225px;
+
+  @include susy-breakpoint($bp-m, $med) {
+    @include pre(2);
+    @include span(10 last);
+    margin-bottom: 100px;
+
+  }
+
+  @include susy-breakpoint($bp-l, $lrg-isolate) {
+    @include span(6 last);
+    @include leading-border(0, 0);
+    margin-bottom: 0px;
+    height: 450px;
+
+  }
+
+  @include susy-breakpoint($bp-xl, $lrg-isolate) {
+    @include span(4 last);
+    height: 550px;
+  }
+}
+
+.row-coding-3 {
+  @extend %row-model-pre;
+  @include color-scheme(3);
+  height: 200px;
+
+  @include susy-breakpoint($bp-m, $med) {
+    @include span(10);
+    
+  }
+
+  @include susy-breakpoint($bp-l, $lrg-isolate) {
+    @include span(6 at 10);
+    margin-top: 350px;
+    height: 450px;
+  }
+
+  @include susy-breakpoint($bp-xl, $lrg-isolate) {
+    @include span(4 at 11);
+    margin-top: 150px;
+    height: 600px;
+  }
+}
+
+
+
+.coding-top {
+  @include trailing-border(0, 0);
+  @include cf;
+  background: image-url('bgs/p5.jpg') no-repeat;
+  height: 900px;
+
+  @include breakpoint($bp-m) {
+    height: 800px;
+
+  }
+
+  @include breakpoint($bp-l) {
+
+  }
+
+  @include breakpoint($bp-xl) {
+    @include trailing-border(12px, 0);
+    border-bottom-color: $c6;
+    height: 750px;
+
   }
 }
 
