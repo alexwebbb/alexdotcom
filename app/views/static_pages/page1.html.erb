@@ -1,4 +1,4 @@
-<% provide(:title, "about") %>
+<% provide(:title, "About") %>
 <% content_for :navigation do %>
   <%= link_to root_path do %>
   <h2>Home</h2>
@@ -12,23 +12,46 @@
 <% end %>
 <main class="width-limit">
 <div class="row-about-1">
-	<h1>Alex Webbb dot com</h1>
-	<h2>The home of Alex Webb</h2>
-	<p>My name is Alex Webb (only two B's) and I am an artist and developer from Austin, TX. I am the <a href="#">risograph</a> operator for <a href="http://www.roughhousecomics.com">Rough House</a> and <a href="#">Raw Paw</a>, I write and illustrate my own comics, and I make websites. Have a look around!</p>
+	<h1>About Me</h1>
+	<p>I am 28 years old and I have been producing art and working with code for many years. I have a degree from Texas State University in Digital Photographic Imaging (with <a href="http://barrystone.com/">Barry Stone</a>). At Texas State I took a printmaking class with <a href="http://jeffreydell.com/">Jeff Dell</a>, and that got me into my current work of producing Risograph (a risograph is essentially an automatic screenprinter, it looks like a xerox machine) printed comics with my friends. My personal style of illustration involves a lot of photo references, it is true, but I think that I add a large dose of my own personal flair to the subject matter. Although I have done plenty of gallery work and installations, I prefer Risograph printed work as it easy to disseminate. <a href="#cont">(continued below)</a></p>
 </div>
 <div class="about-top display-large"></div>
-<div class="row-about-2 comics">
-	<h1>Comics & Illustration</h1>
-	<h2>Check out my personal work.</h2>
+<div class="row-about-2">
+	<h1>Contact</h1>
+	<div class="contact-list">
+	  <div>
+	    <%= mail_to "alexwebbb@yahoo.com" do %>
+	    <h2>Email Address</h2>
+	    <p>alexwebbb@yahoo.com</p>
+	    <% end %>
+	    <%= link_to "https://github.com/alexwebbb" do %>
+	    <h2>Github</h2>
+	    <p>https://github.com/alexwebbb</p>
+	    <% end %>
+	    <%= link_to "https://www.linkedin.com/pub/alex-webb/a1/55/909/" do %>
+	    <h2>LinkedIn</h2>
+	    <p>https://www.linkedin.com/pub/alex-webb/a1/55/909/</p>
+	    <% end %>
+	  </div>
+	  <div>
+	    <%= link_to "https://twitter.com/crepesuezette" do %>
+	    <h2>Twitter</h2>
+	    <p>https://twitter.com/crepesuezette</p>
+	    <% end %>
+	    <%= link_to "http://www.roughhousecomics.com" do %>
+	    <h2>Rough House Comics</h2>
+	    <p>http://www.roughhousecomics.com</p>
+	    <% end %>
+	    <%= link_to "http://www.rawpawatx.com" do %>
+	    <h2>Raw Paw</h2>
+	    <p>http://www.rawpawatx.com</p>
+	    <% end %>
+	  </div>
+	</div>
 	<figure></figure>
 </div>
 <div class="about-top display-small"></div>
-<%= link_to comics_path do %>
-<% end %>
-<%= link_to comics_path do %>
-<div class="row-about-3 coding">
-	<h1>Coding Portfolio</h1>
-    <h2>Check out examples of my code.</h2>
-    <figure></figure>
+<div class="row-about-3">
+	<h2 id="cont">About Me (cont.)</h2>   
+    <p>I am the official printer for <a href="http://www.roughhousecomics.com">Rough House comics</a> and <a href="http://www.rawpawatx.com">Raw Paw</a> and that means that I process all the material that goes into the printer as well as actually print it myself. Although this does make me a little money, I am truly interested in getting into the web development game, as a career. I have technically been writing code since I was a kid, working on the old hacked copies of RPG Maker 2000 (check out <a href="http://rpgmaker2000.narod.ru/">this rowdy website</a>, you can still get it), as well as producing my own handmade fan websites for the anime shows I liked (actually the main show I made a website for I never watched, but only read descriptions of the episodes!!). In any case, I went on hiatus from that kind of work to pursue my art degree, which helped me not at all in art of making money. Head on over to the <%= link_to "coding section", coding_path %> to see what I am up to with that.</p> 
 </div>
-<% end %>

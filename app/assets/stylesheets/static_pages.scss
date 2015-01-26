@@ -83,6 +83,10 @@ h2 {
   @include adjust-font-size-to(12px);
 }
 
+h3 {
+  @extend %header-font;
+}
+
 p {
   color: scale-lightness($c5, -40%);
   font-family: Georgia,Times,Times New Roman,serif;
@@ -247,14 +251,15 @@ main {
   @extend %row-model-pre;
   @extend %row-model-home;
   @include color-scheme(1);
+  height: auto;
   
   @include susy-breakpoint($bp-m, $med) {
     @include span(full);
-    height: 200px;
   }
 
   @include susy-breakpoint($bp-l, $med) {
     @include span(4 first);
+    height: 200px;
   }
 }
 
@@ -569,10 +574,11 @@ main {
 .row-about-1 {
   @extend %row-model-pre;
   @include color-scheme(1);
+  height: auto;
 
   @include susy-breakpoint($bp-m, $med) {
     @include span(full);
-    height: 200px;
+    @include leading-border(0, 0);
   }
 
   @include susy-breakpoint($bp-l, $med) {
@@ -580,14 +586,15 @@ main {
   }
 
   @include susy-breakpoint($bp-xl, $lrg) {
-    @include span(3);
-    height: 600px;
+    @include span(4);
+    height: 640px;
   }
 }
 
 .row-about-2 {
   @extend %row-model-pre;
   @include color-scheme(2);
+  height: auto;
 
   @include susy-breakpoint($bp-m, $med) {
     @include span(6 last);
@@ -597,28 +604,51 @@ main {
   @include susy-breakpoint($bp-l, $med) {
     @include span(3 last);
     height: 600px;
+
   }
 
   @include susy-breakpoint($bp-xl, $lrg) {
     @include span(5 last);
+    @include leading-border(0, 0);
+    height: 640px;
+
+  }
+}
+
+.contact-list div {
+  @include cf;
+  background-color: scale-lightness($c3, 65%);
+  text-align: center;
+  margin-bottom: 10px;
+  word-wrap: break-word;
+  
+  @include breakpoint(max-width ($bp-l - 1)) {
+  @include gallery(6 of 12);
+}
+
+  @include breakpoint($bp-l) {
+    @include span(full);
   }
 }
 
 .row-about-3 {
   @extend %row-model-pre;
   @include color-scheme(3);
+  height: auto;
 
   @include susy-breakpoint($bp-m, $med) {
     @include span(full);
-    height: 200px;
+    
   }
 
   @include susy-breakpoint($bp-l, $med) {
     @include span(9);
+    height: 200px;
   }
 
   @include susy-breakpoint($bp-xl, $lrg) {
-    @include span(16);
+    @include span(15);
+    height: 240px;
   }
 }
 
@@ -655,7 +685,7 @@ main {
   }
 
   @include susy-breakpoint($bp-xl, $lrg) {
-    @include span(16);
+    @include span(15);
   }
 }
 
