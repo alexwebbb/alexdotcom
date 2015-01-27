@@ -797,7 +797,7 @@ main {
 .coding-top {
   @include trailing-border(0, 0);
   @include cf;
-  background: image-url('bgs/p5.jpg') no-repeat;
+  background: image-url('bgs/p5.jpg') repeat-y;
   height: 900px;
 
   @include breakpoint($bp-m) {
