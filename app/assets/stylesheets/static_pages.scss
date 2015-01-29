@@ -589,6 +589,14 @@ main {
   @include color-scheme(1);
   height: auto;
 
+  .about-small {
+    display: inline;
+  }
+
+  .about-large {
+    display: none;
+  }
+
   @include susy-breakpoint($bp-m, $med) {
     @include span(full);
     @include leading-border(0, 0);
@@ -601,6 +609,15 @@ main {
   @include susy-breakpoint($bp-xl, $lrg) {
     @include span(4);
     height: 640px;
+
+  .about-small {
+    display: none;
+  }
+
+  .about-large {
+    display: inline;
+  }
+
   }
 }
 
