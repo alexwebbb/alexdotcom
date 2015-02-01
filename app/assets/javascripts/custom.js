@@ -12,9 +12,9 @@ ready = function() {
   $(".p2").click(function () {
 
   	  $('.active').removeClass('active');
-
-      TweenMax.to($(this), 0.5, {
-      boxShadow:"0px 0px 10px 10px rgb(0, 204, 0)"
+  	  var temp = $(".p2");
+      TweenLite.to(temp, 0.5, {
+      boxShadow:"0px 0px 0px 0px rgb(0, 204, 0)"
       });
  
 	  $('.g2').toggleClass('active');
