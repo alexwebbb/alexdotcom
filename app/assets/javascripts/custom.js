@@ -1,7 +1,9 @@
 var ready;
 ready = function() {
 
+	var c1 = "#4bff8b";
 	var c6 = "#fff849";
+
 
 	var shadowChange = function(x) {
 
@@ -14,7 +16,7 @@ ready = function() {
   	  $('.active').removeClass('active');
 
       TweenLite.to(x, 0.5, {
-        boxShadow:"2px 2px 0px " + c6
+        boxShadow:"3px 3px 0px " + c1
         });
 
 	};
