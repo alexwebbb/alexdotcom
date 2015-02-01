@@ -14,5 +14,6 @@
 //= require jquery_ujs
 //= require 'greensock/TweenLite'
 //= require 'greensock/plugins/CSSPlugin'
+//= require turbolinks
 //= require_tree .
 
