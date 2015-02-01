@@ -546,7 +546,10 @@ main {
   }
 }
 
-
+// Okay the reason I am using inline images here is that sprites don't
+// exhibit the same "centering" behaviour that background: center 
+// provides. Since these frames are designed to be resized, this is
+// a key requirement.
 
 .p1 {
   background: inline-image('preview/hl3.jpg') center no-repeat;
