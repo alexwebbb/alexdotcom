@@ -233,12 +233,12 @@ main {
 
 .home-top {
   @extend %img-class;
-  background: image-url('bgs/p3.jpg') no-repeat;
+  background: inline-image('bgs/p3.jpg') no-repeat;
 }
 
 .home-bottom {
   @extend %img-class;
-  background: image-url('bgs/p4.jpg') no-repeat;
+  background: inline-image('bgs/p4.jpg') no-repeat;
 }
 
 
@@ -288,7 +288,7 @@ main {
 
   figure {
     @include span(full);
-    background: image-url('preview/comicslil.jpg') center no-repeat;
+    background: inline-image('preview/comicslil.jpg') center no-repeat;
     border-radius: 60px 0 0 0;
     border: 4px dashed $c4;
     height: 120px;
@@ -324,7 +324,7 @@ main {
 
   figure {
     @include span(full);
-    background: image-url('preview/codinglil.jpg') center no-repeat;
+    background: inline-image('preview/codinglil.jpg') center no-repeat;
     border-radius: 0 60px 0 0;
     height: 120px;
     border: 4px dashed $c6;
@@ -688,7 +688,7 @@ main {
 
 .about-top {
   @include span(full);
-  background: image-url('bgs/p2.jpg') center no-repeat;
+  background: inline-image('bgs/p2.jpg') center no-repeat;
   height: 400px;
   position: relative;
 
@@ -701,7 +701,7 @@ main {
   }
 
   figure {
-    background: image-url('self/alex-photo.jpg') center no-repeat;
+    background: inline-image('self/alex-photo.jpg') center no-repeat;
     height: 300px;
     width: 300px;
     border: 4px dashed $c3;  
@@ -817,7 +817,7 @@ main {
 .coding-top {
   @include trailing-border(0, 0);
   @include cf;
-  background: image-url('bgs/p5.jpg') repeat-y;
+  background: inline-image('bgs/p5.jpg') repeat-y;
   height: 900px;
 
   @include breakpoint($bp-m) {
