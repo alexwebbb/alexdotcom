@@ -549,27 +549,27 @@ main {
 
 
 .p1 {
-  background: image-url('preview/hl3.jpg') center no-repeat;
+  background: inline-image('preview/hl3.jpg') center no-repeat;
 }
 
 .p2 {
-  background: image-url('preview/rh2.jpg') center no-repeat;
+  background: inline-image('preview/rh2.jpg') center no-repeat;
 }
 
 .p3 {
-  background: image-url('preview/gtc.jpg') center no-repeat;
+  background: inline-image('preview/gtc.jpg') center no-repeat;
 }
 
 .p4 {
-  background: image-url('preview/rh1.jpg') center no-repeat;
+  background: inline-image('preview/rh1.jpg') center no-repeat;
 }
 
 .p5 {
-  background: image-url('preview/sd.jpg') center no-repeat;
+  background: inline-image('preview/sd.jpg') center no-repeat;
 }
 
 .p6 {
-  background: image-url('preview/sl.jpg') center no-repeat;
+  background: inline-image('preview/sl.jpg') center no-repeat;
 }
 
 // Default is for the text block in the gallery, it removes the prompt
