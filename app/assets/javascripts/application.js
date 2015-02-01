@@ -12,5 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require 'greensock/TweenLite'
+//= require 'greensock/plugins/CSSPlugin'
 //= require_tree .
 
