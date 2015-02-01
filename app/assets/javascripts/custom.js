@@ -1,55 +1,81 @@
 var ready;
 ready = function() {
 
-  $(".p1").click(function () {
+	var c6 = "#fff849";
+
+	var shadowChange = function(x) {
+
+	  var active = $('.gallery').find('.active');
+
+  	  TweenLite.to(active, 0.5, {
+        boxShadow:"10px 10px 5px " + c6
+        });
 
   	  $('.active').removeClass('active');
+
+      TweenLite.to(x, 0.5, {
+        boxShadow:"2px 2px 0px " + c6
+        });
+
+	};
+
+  $(".p1").click(function () {
+
+      var select = $(this);
+    
+      shadowChange(select);
  
-	  $('.g1').toggleClass('active');
- 
+	  $('.g1, .p1').toggleClass('active');
+
     });
 
   $(".p2").click(function () {
 
-  	  $('.active').removeClass('active');
-  	  var temp = $(".p2");
-      TweenLite.to(temp, 0.5, {
-      boxShadow:"0px 0px 0px 0px rgb(0, 204, 0)"
-      });
+  	  var select = $(this);
+    
+      shadowChange(select);
  
-	  $('.g2').toggleClass('active');
+	  $('.g2, .p2').toggleClass('active');
  
     });
 
   $(".p3").click(function () {
 
-  	  $('.active').removeClass('active');
+  	  var select = $(this);
+    
+      shadowChange(select);
  
-	  $('.g3').toggleClass('active');
+	  $('.g3, .p3').toggleClass('active');
  
     });
 
   $(".p4").click(function () {
 
-  	  $('.active').removeClass('active');
+  	  var select = $(this);
+    
+      shadowChange(select);
  
-	  $('.g4').toggleClass('active');
+	  $('.g4, .p4').toggleClass('active');
  
     });
 
   $(".p5").click(function () {
 
-  	  $('.active').removeClass('active');
+  	  var select = $(this);
+    
+      shadowChange(select);
  
-	  $('.g5').toggleClass('active');
+	  $('.g5, .p5').toggleClass('active');
  
     });
 
   $(".p6").click(function () {
 
-  	  $('.active').removeClass('active');
+  	  var select = $(this);
+    
+      shadowChange(select);
  
-	  $('.g6').toggleClass('active');
+	  $('.g6, .p6').toggleClass('active');
  
     });
 
