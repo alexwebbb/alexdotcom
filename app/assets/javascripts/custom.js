@@ -40,6 +40,13 @@ ready = function() {
       }
     }
   
+    $(".xl-button").click(function () {
+  
+   
+  	  $('.home-top').toggleClass('switch');
+  
+    });
+
     $('.gallery img').on('mouseenter', boxEffectIn).on('mouseleave', boxEffectOut);
   
     $(".p1").click(function () {
@@ -50,7 +57,7 @@ ready = function() {
    
   	  $('.g1, .p1').toggleClass('active');
   
-      });
+    });
   
     $(".p2").click(function () {
   

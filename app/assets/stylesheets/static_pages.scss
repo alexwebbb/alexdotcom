@@ -218,7 +218,7 @@ main {
   }
 
   @include susy-breakpoint($bp-xl, $lrg) {
-    @include span(24 - $xl-sidebar-width);
+    @include span(23 - $xl-sidebar-width);
     @include trailing-border(12px, .5);
     border-bottom-color: lighten($c1, 5%);
     height: $row-height*3;
@@ -229,16 +229,45 @@ main {
   }
 }
 
+// Picture changer button at xl
+
+.xl-button {
+  display: none;
+
+  @include susy-breakpoint($bp-xl, $lrg) {
+    @include span(1);
+    height: 750px;
+    background-color: scale-lightness($c5, 40%);
+    display: inline-block;
+
+    .v-text {
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+      font-family: Montserrat,Optima,Segoe,Segoe UI,Candara,Calibri,Arial,sans-serif;
+      color: scale-lightness($c5, 60%);
+      text-shadow: 1px 2px $c5;
+    }
+  }
+}
+
 // here are the actual images classes for the background images
 
 .home-top {
   @extend %img-class;
   background: inline-image('bgs/p3.jpg') no-repeat;
+
+  //picture changer button
+
+  &.switch {
+    background: image-url('bgs/p4.jpg') no-repeat;
+  }
 }
 
 .home-bottom {
   @extend %img-class;
-  background: inline-image('bgs/p4.jpg') no-repeat;
+  background: image-url('bgs/p4.jpg') no-repeat;
+
 }
 
 
