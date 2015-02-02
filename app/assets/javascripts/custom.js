@@ -2,6 +2,7 @@ var ready;
 ready = function() {
 
 	var c1 = "#4bff8b";
+	var c5 = "#ff65ab";
 	var c6 = "#fff849";
 
 
@@ -21,64 +22,84 @@ ready = function() {
 
 	};
 
-  $(".p1").click(function () {
+    var boxEffectIn = function () {
+  
+      if(!$(this).hasClass('active')) {
+        TweenLite.to($(this), 0.5, {
+          boxShadow:"10px 10px 0px " + c1
+        });
+      }
+    }
 
-      var select = $(this);
-    
-      shadowChange(select);
- 
-	  $('.g1, .p1').toggleClass('active');
+    var boxEffectOut = function () {
+  
+      if(!$(this).hasClass('active')) {
+        TweenLite.to($(this), 0.5, {
+          boxShadow:"10px 10px 5px " + c6
+        });
+      }
+    }
+  
+    $('.gallery img').on('mouseenter', boxEffectIn).on('mouseleave', boxEffectOut);
+  
+    $(".p1").click(function () {
+  
+        var select = $(this);
+      
+        shadowChange(select);
+   
+  	  $('.g1, .p1').toggleClass('active');
+  
+      });
+  
+    $(".p2").click(function () {
+  
+    	  var select = $(this);
+      
+        shadowChange(select);
+   
+  	  $('.g2, .p2').toggleClass('active');
+   
+      });
+  
+    $(".p3").click(function () {
+  
+    	  var select = $(this);
+      
+        shadowChange(select);
+   
+  	  $('.g3, .p3').toggleClass('active');
+   
+      });
 
-    });
-
-  $(".p2").click(function () {
-
-  	  var select = $(this);
-    
-      shadowChange(select);
- 
-	  $('.g2, .p2').toggleClass('active');
- 
-    });
-
-  $(".p3").click(function () {
-
-  	  var select = $(this);
-    
-      shadowChange(select);
- 
-	  $('.g3, .p3').toggleClass('active');
- 
-    });
-
-  $(".p4").click(function () {
-
-  	  var select = $(this);
-    
-      shadowChange(select);
- 
-	  $('.g4, .p4').toggleClass('active');
- 
-    });
-
-  $(".p5").click(function () {
-
-  	  var select = $(this);
-    
-      shadowChange(select);
- 
-	  $('.g5, .p5').toggleClass('active');
- 
-    });
-
-  $(".p6").click(function () {
-
-  	  var select = $(this);
-    
-      shadowChange(select);
- 
-	  $('.g6, .p6').toggleClass('active');
- 
+    $(".p4").click(function () {
+  
+    	  var select = $(this);
+      
+        shadowChange(select);
+   
+  	  $('.g4, .p4').toggleClass('active');
+   
+      });
+  
+    $(".p5").click(function () {
+  
+    	  var select = $(this);
+      
+        shadowChange(select);
+   
+  	  $('.g5, .p5').toggleClass('active');
+   
+      });
+  
+    $(".p6").click(function () {
+  
+    	  var select = $(this);
+      
+        shadowChange(select);
+   
+  	  $('.g6, .p6').toggleClass('active');
+   
     });
 
 };
