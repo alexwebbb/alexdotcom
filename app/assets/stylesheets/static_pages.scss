@@ -233,6 +233,7 @@ main {
 
 .xl-button {
   display: none;
+  position: relative;
 
   @include susy-breakpoint($bp-xl, $lrg) {
     @include span(1);
@@ -247,6 +248,10 @@ main {
       font-family: Montserrat,Optima,Segoe,Segoe UI,Candara,Calibri,Arial,sans-serif;
       color: scale-lightness($c5, 60%);
       text-shadow: 1px 2px $c5;
+    }
+
+    &:hover {
+      background-color: scale-lightness($c5, 70%);
     }
   }
 }

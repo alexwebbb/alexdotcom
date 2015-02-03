@@ -3,6 +3,8 @@ ready = function() {
 
 	var c1 = "#4bff8b";
 	var c5 = "#ff65ab";
+	var c5l = "#ffa3cd";
+	var c5xl = "#ffd1e6";
 	var c6 = "#fff849";
 
 
@@ -39,6 +41,25 @@ ready = function() {
         });
       }
     }
+
+//    var bgcEffectIn = function () {
+//  
+//      if(!$(this).hasClass('active')) {
+//        TweenLite.to($(this), 0.5, {
+//          backgroundColor: c5x1
+//        });
+//      }
+//    }
+//
+//    var bgcEffectOut = function () {
+//  
+//      if(!$(this).hasClass('active')) {
+//        TweenLite.to($(this), 0.5, {
+//          backgroundColor: c5l
+//        });
+//      }
+//    }
+   
   
     $(".xl-button").click(function () {
   
@@ -47,7 +68,10 @@ ready = function() {
   
     });
 
+
     $('.gallery img').on('mouseenter', boxEffectIn).on('mouseleave', boxEffectOut);
+
+//    $('.xl-button').on('mouseenter', bgcEffectIn).on('mouseleave', bgcEffectOut);
   
     $(".p1").click(function () {
   
