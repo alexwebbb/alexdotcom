@@ -31,7 +31,7 @@ ready = function() {
           boxShadow:"10px 10px 0px " + c1
         });
       }
-    }
+    };
 
     var boxEffectOut = function () {
   
@@ -40,7 +40,7 @@ ready = function() {
           boxShadow:"10px 10px 5px " + c6
         });
       }
-    }
+    };
 
 //    var bgcEffectIn = function () {
 //  
