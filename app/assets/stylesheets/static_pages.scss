@@ -234,6 +234,7 @@ main {
 .xl-button {
   display: none;
   position: relative;
+  cursor: pointer;
 
   @include susy-breakpoint($bp-xl, $lrg) {
     @include span(1);
