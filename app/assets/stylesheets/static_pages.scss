@@ -1,6 +1,5 @@
 @import 'susy';
 @import 'compass';
-// @import 'compass/typography';
 @import 'breakpoint';
 @import url(https://fonts.googleapis.com/css?family=Montserrat|Pacifico);
 @include border-box-sizing;
@@ -102,6 +101,7 @@ a {
 
   h1,
   h2 {
+    //Unstyled link stops the underlining that links have
     @include unstyled-link;
   }
 }
@@ -123,6 +123,7 @@ a {
 nav {
   @include cf;
   background-color: scale-lightness($c1, 50%);
+  // All of the following keeps the nav bar at the top of the screen
   position: fixed;
   top: 0;
   left: 0;
@@ -132,6 +133,7 @@ nav {
   height: 30px;
 
   a {
+    // Styling for nav links, and I use the gallery mixin to control their width
     @include layout($gallery);
     @include gallery(4 of 12);
     @include adjust-leading-to(.5, 12px);
@@ -146,7 +148,7 @@ nav {
 
 // Main Layout
 
-
+// Size limits for oversized screens. The homepage has a wider limit.
 .width-limit-large {
   margin-left: auto;
   margin-right: auto;
@@ -166,7 +168,7 @@ nav {
  }
 
 // Vertical Rhythm in Compass is used for applying all borders
-
+// this makes sure that line spacing remains consistent, ie ignores borders
 main {
   margin-top: 30px;
 
@@ -188,7 +190,7 @@ main {
 }
 
 // I extend from a general image class for the backgrounds
-
+// the display classes are used to control the appearance of backgrounds
 %img-class {
   @include span(full);
   height: 900px;
